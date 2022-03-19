@@ -4,9 +4,9 @@
     <input
       type="text"
       name="text"
+      [(ngModel)]="text"
       id="text"
       placeholder="Add Task"
-      [(ngModel)]="text"
     />
   </div>
   <div class="form-control">
@@ -14,9 +14,9 @@
     <input
       type="text"
       name="day"
-      id="day"
-      placeholder="Day & Time"
       [(ngModel)]="day"
+      id="day"
+      placeholder="Add Day & Time"
     />
   </div>
   <div class="form-control form-control-check">
@@ -24,8 +24,8 @@
     <input
       type="checkbox"
       name="reminder"
-      id="reminder"
       [(ngModel)]="reminder"
+      id="reminder"
     />
   </div>
   <input type="submit" value="Save Task" class="btn btn-block" />

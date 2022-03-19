@@ -6,12 +6,12 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss'],
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   title: string = 'Task Tracker';
   showAddTask: boolean = false;
-  subscription!: Subscription;
+  subscription: Subscription;
 
   constructor(private uiService: UiService, private router: Router) {
     this.subscription = this.uiService
@@ -20,6 +20,11 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+  
+   ngOnDestroy() {
+     // Unsubscribe to ensure no memory leaks
+     this.subscription.unsubscribe();
+   }
 
   toggleAddTask() {
     this.uiService.toggleAddTask();
