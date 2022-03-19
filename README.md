@@ -1,3 +1,7 @@
+### Deploy
+
+https://liliia-r.github.io/task-tracker/
+
 ### Install dependencies
 
 ```
